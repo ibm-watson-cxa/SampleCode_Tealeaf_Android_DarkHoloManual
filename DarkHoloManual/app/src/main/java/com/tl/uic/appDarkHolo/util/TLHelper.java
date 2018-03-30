@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.DatePicker;
 import android.widget.RadioGroup;
@@ -103,7 +104,20 @@ public class TLHelper {
 		
 		return onCheckedChangeListener;
 	}
-	
+
+	public static CompoundButton.OnCheckedChangeListener getCompoundButtonOnCheckedChangeListener() {
+
+		CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			}
+		};
+
+		return onCheckedChangeListener;
+	}
+
+
 	public static OnRatingBarChangeListener getOnRatingBarChangeListener() {
 		
 		OnRatingBarChangeListener onRatingBarChangeListener = new OnRatingBarChangeListener() {
