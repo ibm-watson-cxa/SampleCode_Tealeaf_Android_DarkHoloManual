@@ -66,12 +66,10 @@ public class UICAndroidControlsAppActivity extends TabActivity implements TabHos
         tabHost.addTab(spec);
         
         tabHost.setOnTabChangedListener(this);
-        Tealeaf.logScreenLayout(this, tabHost.getCurrentTabTag());
     }
 
 	@Override
 	public void onTabChanged(String arg0) {
-		Tealeaf.logScreenLayout(this, getTabHost().getCurrentTabTag(), 10);
 		Tealeaf.logEvent(getTabHost().getCurrentTabView(), "click");
 	}
 
