@@ -10,10 +10,10 @@ import com.tl.uic.Tealeaf;
 import com.tl.uic.app.UICApplication;
 
 public class MyApplication extends UICApplication {
-	@Override
-	public void onCreate() {
-		super.onCreate();
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-		Tealeaf.enable();
-	}
+        Tealeaf.enable();
+    }
 }
