@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Licensed Materials - Property of IBM
- * (C) Copyright IBM Corp. 2016
+ * (C) Copyright IBM Corp. 2018
  * US Government Users Restricted Rights - Use, duplication or disclosure
  * restricted by GSA ADP Schedule Contract with IBM Corp.
  ******************************************************************************/
@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.DatePicker;
 import android.widget.RadioGroup;
@@ -39,7 +40,7 @@ public class TLHelper {
 				Tealeaf.logEvent(view, "Click");
 			}
 		};
-		
+
 		return onClickListener;
 	}
 	
@@ -101,6 +102,19 @@ public class TLHelper {
 			}
 		};
 		
+		return onCheckedChangeListener;
+	}
+
+	public static CompoundButton.OnCheckedChangeListener getCompoundButtonOnCheckedChangeListener() {
+
+		CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Tealeaf.logEvent(buttonView, "Click");
+			}
+		};
+
 		return onCheckedChangeListener;
 	}
 	

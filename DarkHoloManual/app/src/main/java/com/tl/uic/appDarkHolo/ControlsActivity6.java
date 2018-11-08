@@ -15,6 +15,7 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ControlsActivity6 extends BaseFragment {
+public class ControlsActivity6 extends AppCompatActivity {
 	private ArrayList<? extends Item> data;
 	private Items items = Items.getInstance();
 	private String packageName;
@@ -32,7 +33,6 @@ public class ControlsActivity6 extends BaseFragment {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.controls6);
-		setLogicalPageName("c6");
 
 		packageName = this.getApplicationContext().getPackageName();
 	    data = items.getCategories();

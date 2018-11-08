@@ -10,18 +10,18 @@ import com.tl.uic.appDarkHolo.R;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 
 
-public class ControlsActivity3 extends BaseFragment {
+public class ControlsActivity3 extends AppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.controls3);
-		setLogicalPageName("c3");
-	    
+
 	    EditText et = (EditText) findViewById(R.id.editText1);
 	    
 	    TLHelper.addFocusAndRegister(et, this);
@@ -64,4 +64,9 @@ public class ControlsActivity3 extends BaseFragment {
 	private static final String[] COUNTRIES = new String[] {
         "Belgium", "France", "Italy", "Germany", "Spain"
     };
+
+    @Override
+    public void onBackPressed() {
+        this.getParent().onBackPressed();
+    }
 }

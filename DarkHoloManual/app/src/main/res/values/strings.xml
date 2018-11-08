@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- - Licensed Materials - Property of IBM
- - (C) Copyright IBM Corp. 2016
- - US Government Users Restricted Rights - Use, duplication or disclosure
- - restricted by GSA ADP Schedule Contract with IBM Corp.
- -->
+  Licensed Materials - Property of IBM
+  5725-K23
+  (c) Copyright IBM Corp. 2013, 2014
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
 <resources>
-    <string name="hello">Hello World, UICAndroidControlsAppActivity!</string>
-    <string name="app_name">UICAndroidControlsAppDarkHolo</string>
+    <string name="app_name">DarkHoloManual</string>
     <string name="planet_prompt">Choose a planet</string>
     <string-array name="planets_array">
         <item>Mercury</item>
@@ -42,7 +41,7 @@
     <string name="primary">Primary</string>
     <string name="hint">Hint</string>
     <string name="alert1">Alert 1 Button</string>
-    <string name="alert2">Alert 2 Button</string>
+    <string name="alert2">Log Dialog Fragment</string>
     <string name="alertTitle">Example Alert</string>
     <string name="alertMessage1">Alert 1 Button</string>
     <string name="alertMessage2">Alert 2 Button</string>

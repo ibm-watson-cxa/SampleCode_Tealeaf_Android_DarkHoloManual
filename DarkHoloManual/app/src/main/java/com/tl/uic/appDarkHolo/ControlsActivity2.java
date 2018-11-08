@@ -10,6 +10,7 @@ import com.tl.uic.appDarkHolo.R;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -22,12 +23,11 @@ import android.widget.Spinner;
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity2 extends BaseFragment {
+public class ControlsActivity2 extends AppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.controls2);
-		setLogicalPageName("c2");
-	    
+
 	    RadioButton rb = (RadioButton) findViewById(R.id.radioButton1);
 	    rb.setOnClickListener(TLHelper.getOnClickListener());
 	    

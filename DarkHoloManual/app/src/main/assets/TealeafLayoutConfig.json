@@ -21,7 +21,7 @@
     "ControlsActivity2": {
       "do": true,
       "screenViewName": "CA2",
-      "delay": 50,
+      "delay": 100,
       "takeScreenShot": false
     },
     "ControlsActivity3": {
@@ -33,7 +33,7 @@
     "ControlsActivity4": {
       "do": true,
       "screenViewName": "CA4",
-      "delay": 50,
+      "delay": 200,
       "takeScreenShot": false
     },
     "ControlsActivity5": {
