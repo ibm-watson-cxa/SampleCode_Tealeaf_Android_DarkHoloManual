@@ -9,7 +9,7 @@ package com.tl.uic.appDarkHolo;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.AnalogClock;
 import android.widget.Chronometer;
 import android.widget.DatePicker;
