@@ -1,13 +1,10 @@
 /*******************************************************************************
  * Licensed Materials - Property of IBM
- * (C) Copyright IBM Corp. 2016
+ * (C) Copyright IBM Corp. 2018
  * US Government Users Restricted Rights - Use, duplication or disclosure
  * restricted by GSA ADP Schedule Contract with IBM Corp.
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
-
-import com.tl.uic.Tealeaf;
-import com.tl.uic.appDarkHolo.R;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -15,6 +12,8 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.TabHost;
+
+import com.tl.uic.Tealeaf;
 
 @SuppressWarnings("deprecation")
 public class UICAndroidControlsAppActivity extends TabActivity implements TabHost.OnTabChangeListener {
@@ -72,10 +71,6 @@ public class UICAndroidControlsAppActivity extends TabActivity implements TabHos
 	public void onTabChanged(String arg0) {
 		Tealeaf.logEvent(getTabHost().getCurrentTabView(), "click");
 	}
-
-    protected void onResume() {
-        super.onResume();
-    }
     
     /* Add touch event to collect gestures for Tealeaf.
      * 
@@ -86,5 +81,13 @@ public class UICAndroidControlsAppActivity extends TabActivity implements TabHos
     {
         Tealeaf.dispatchTouchEvent(this, e);
         return super.dispatchTouchEvent(e);
+    }
+
+    @Override
+    public void onBackPressed() {
+        TabHost tabHost = getTabHost();  // The activity TabHost
+        TabHost.TabSpec spec;  // Reusable TabSpec for each tab
+        Intent intent;  // Reusable Intent for each tab
+        tabHost.setCurrentTab(0);
     }
 }

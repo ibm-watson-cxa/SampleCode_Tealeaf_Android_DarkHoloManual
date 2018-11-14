@@ -40,7 +40,7 @@ public class TLHelper {
 				Tealeaf.logEvent(view, "Click");
 			}
 		};
-		
+
 		return onClickListener;
 	}
 	
@@ -111,13 +111,13 @@ public class TLHelper {
 
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Tealeaf.logEvent(buttonView, "Click");
 			}
 		};
 
 		return onCheckedChangeListener;
 	}
-
-
+	
 	public static OnRatingBarChangeListener getOnRatingBarChangeListener() {
 		
 		OnRatingBarChangeListener onRatingBarChangeListener = new OnRatingBarChangeListener() {

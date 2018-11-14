@@ -7,18 +7,20 @@
 package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Switch;
+
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 /**
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity8 extends BaseFragment {
+public class ControlsActivity8 extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.controls8);
-        setLogicalPageName("c8");
+
         Switch sUw = findViewById(R.id.saveUname_switch);
         sUw.setOnCheckedChangeListener(TLHelper.getCompoundButtonOnCheckedChangeListener());
 
