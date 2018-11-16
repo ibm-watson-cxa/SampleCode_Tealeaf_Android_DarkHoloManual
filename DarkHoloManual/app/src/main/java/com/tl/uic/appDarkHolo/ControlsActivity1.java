@@ -6,10 +6,15 @@
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
 
+import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.R;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
@@ -22,12 +27,11 @@ import android.widget.ToggleButton;
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity1 extends BaseFragment {
+public class ControlsActivity1 extends AppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.controls1);
-		setLogicalPageName("c1");
-	    
+
 	    TextView t = (TextView) findViewById(R.id.textView1);
 	    t.setOnClickListener(TLHelper.getOnClickListener());
 	    t = (TextView) findViewById(R.id.textView2);
@@ -57,5 +61,30 @@ public class ControlsActivity1 extends BaseFragment {
 	    
 	    CheckBox cb = (CheckBox) findViewById(R.id.checkBox1);
 	    cb.setOnClickListener(TLHelper.getOnClickListener());
+
+
+		// Instrumentation for Scrollview screen capture
+		final NestedScrollView scrollView = (NestedScrollView) findViewById(R.id.scrollView1);
+		final Activity activity = this;
+
+		scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+			@Override
+			public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+				// Scroll offset before calling Tealeaf Logscreen API
+				if (scrollY - oldScrollY > 100) {
+					Tealeaf.logScreenLayout(activity, "CustomScrollViewLog");
+				}
+			}
+		});
+
+		Button logScreenButton = (Button) findViewById(R.id.buttonCaptureScreen);
+
+		logScreenButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Tealeaf.logScreenLayout(activity, "CustomButtonLog", 10);
+
+			}
+		});
 	}
 }

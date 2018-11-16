@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Licensed Materials - Property of IBM
- * (C) Copyright IBM Corp. 2016
+ * (C) Copyright IBM Corp. 2018
  * US Government Users Restricted Rights - Use, duplication or disclosure
  * restricted by GSA ADP Schedule Contract with IBM Corp.
  ******************************************************************************/
@@ -10,11 +10,10 @@ import com.tl.uic.Tealeaf;
 import com.tl.uic.app.UICApplication;
 
 public class MyApplication extends UICApplication {
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		//  Not needed when using UICApplication
-		//  new Tealeaf(this);
-		Tealeaf.enable();
-	}
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        Tealeaf.enable();
+    }
 }
