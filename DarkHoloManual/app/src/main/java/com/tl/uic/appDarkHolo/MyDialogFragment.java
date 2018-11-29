@@ -62,7 +62,7 @@ public class MyDialogFragment extends DialogFragment {
         }
 
         // Handles case where onShow method is being overridden
-        final DialogLogScreenTask dialogLogScreenTask = new DialogLogScreenTask(activity, "", this.getDialog(), Tealeaf.getCurrentSessionId());
+        final DialogLogScreenTask dialogLogScreenTask = new DialogLogScreenTask(activity, "CA5", this.getDialog(), Tealeaf.getCurrentSessionId());
         dialogLogScreenTask.execute();
     }
 }

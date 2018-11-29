@@ -6,10 +6,6 @@
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
 
-import com.tl.uic.Tealeaf;
-import com.tl.uic.appDarkHolo.R;
-import com.tl.uic.appDarkHolo.util.TLHelper;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
@@ -22,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.tl.uic.Tealeaf;
+import com.tl.uic.appDarkHolo.util.TLHelper;
 
 /**
  * @author ohernandezltmac
