@@ -9,7 +9,7 @@ package com.tl.uic.appDarkHolo;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @author ohernandezltmac
