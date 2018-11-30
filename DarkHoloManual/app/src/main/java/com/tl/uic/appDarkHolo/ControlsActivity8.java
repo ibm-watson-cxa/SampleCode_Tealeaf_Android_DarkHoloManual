@@ -7,7 +7,7 @@
 package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Switch;
 
 import com.tl.uic.appDarkHolo.util.TLHelper;

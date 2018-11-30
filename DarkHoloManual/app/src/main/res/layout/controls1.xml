@@ -4,7 +4,7 @@
   (c) Copyright IBM Corp. 2018
   US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 -->
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/scrollView1"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
@@ -250,4 +250,4 @@
 			android:layout_height="wrap_content"
 			android:text="Log Screen" />
 	</LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</android.support.v4.widget.NestedScrollView>

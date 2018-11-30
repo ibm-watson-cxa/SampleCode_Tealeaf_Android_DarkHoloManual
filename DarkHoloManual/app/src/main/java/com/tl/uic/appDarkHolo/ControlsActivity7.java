@@ -15,7 +15,7 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
