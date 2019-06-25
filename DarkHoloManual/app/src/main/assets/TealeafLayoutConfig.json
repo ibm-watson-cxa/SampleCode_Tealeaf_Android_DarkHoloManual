@@ -1,75 +1,66 @@
 /*******************************************************************************
 * Licensed Materials - Property of IBM
-* (C) Copyright IBM Corp. 2018
+* (C) Copyright IBM Corp. 2019
 * US Government Users Restricted Rights - Use, duplication or disclosure
 * restricted by GSA ADP Schedule Contract with IBM Corp.
 ******************************************************************************/
 {
   "AutoLayout": {
-  "IBMGlobalScreenSettings":{
-      "do": true,
-      "screenViewName": "",
-      "delay": 500,
-      "takeScreenShot": true,
-      "isWebView": false,
-      "numberOfWebviews": 0,
-      "CaptureScreenContents": true,
+    "IBMGlobalScreenSettings":{
+      "ScreenChange": true,
+      "DisplayName": "",
+      "CaptureLayoutDelay": 0,
+      "ScreenShot": true,
+      "NumberOfWebViews": 0,
+      "CaptureUserEvents": true,
       "CaptureScreenVisits": true,
-      "CaptureLayoutOn": 2
-  },
+      "CaptureLayoutOn": 2,
+      "CaptureScreenshotOn": 0
+    },
     "UICAndroidControlsAppActivity": {
-      "do": false,
-      "screenViewName": "UICAndroidControlsAppActivity",
-      "delay": 1,
-      "takeScreenShot": false
+      "ScreenChange": false,
+      "DisplayName": "UICAndroidControlsAppActivity",
+      "CaptureLayoutDelay": 1
     },
     "ControlsActivity1": {
-      "do": true,
-      "screenViewName": "CA1",
-      "delay": 800,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA1",
+      "CaptureLayoutDelay": 800
     },
     "ControlsActivity2": {
-      "do": true,
-      "screenViewName": "CA2",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA2",
+      "CaptureLayoutDelay": 200
     },
     "ControlsActivity3": {
-      "do": true,
-      "screenViewName": "CA3",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA3",
+      "CaptureLayoutDelay": 200
     },
     "ControlsActivity4": {
-      "do": true,
-      "screenViewName": "CA4",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA4",
+      "CaptureLayoutDelay": 200
     },
     "ControlsActivity5": {
-      "do": true,
-      "screenViewName": "CA5",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA5",
+      "CaptureLayoutDelay": 200
     },
     "ControlsActivity6": {
-      "do": true,
-      "screenViewName": "CA6",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA6",
+      "CaptureLayoutDelay": 200
     },
     "ControlsActivity7": {
-      "do": true,
-      "screenViewName": "CA7",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA7",
+      "CaptureLayoutDelay": 200
     },
     "ControlsActivity8": {
-      "do": true,
-      "screenViewName": "CA8",
-      "delay": 200,
-      "takeScreenShot": false
+      "ScreenChange": true,
+      "DisplayName": "CA8",
+      "CaptureLayoutDelay": 200
     }
   },
   "AppendMapIds": {
