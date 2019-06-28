@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -60,5 +61,16 @@ public class ControlsActivity5 extends AppCompatActivity {
                 alertDialog.show(fm, "fragment_alert");
             }
         });
+    }
+
+    /* Add touch event to collect gestures for Tealeaf.
+     *
+     * (non-Javadoc)
+     * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+     */
+    public boolean dispatchTouchEvent(MotionEvent e)
+    {
+        Tealeaf.dispatchTouchEvent(this, e);
+        return super.dispatchTouchEvent(e);
     }
 }

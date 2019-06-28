@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -85,5 +86,16 @@ public class ControlsActivity1 extends AppCompatActivity {
 
 			}
 		});
+	}
+
+	/* Add touch event to collect gestures for Tealeaf.
+	 *
+	 * (non-Javadoc)
+	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+	 */
+	public boolean dispatchTouchEvent(MotionEvent e)
+	{
+		Tealeaf.dispatchTouchEvent(this, e);
+		return super.dispatchTouchEvent(e);
 	}
 }

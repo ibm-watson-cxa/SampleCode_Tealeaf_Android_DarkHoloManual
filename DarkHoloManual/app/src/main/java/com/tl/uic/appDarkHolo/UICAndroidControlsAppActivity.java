@@ -71,17 +71,17 @@ public class UICAndroidControlsAppActivity extends TabActivity implements TabHos
 	public void onTabChanged(String arg0) {
 		Tealeaf.logEvent(getTabHost().getCurrentTabView(), "click");
 	}
-    
+
     /* Add touch event to collect gestures for Tealeaf.
-     * 
+     *
      * (non-Javadoc)
      * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
      */
-    public boolean dispatchTouchEvent(MotionEvent e)
-    {
-        Tealeaf.dispatchTouchEvent(this, e);
-        return super.dispatchTouchEvent(e);
-    }
+//    public boolean dispatchTouchEvent(MotionEvent e)
+//    {
+//        Tealeaf.dispatchTouchEvent(this, e);
+//        return super.dispatchTouchEvent(e);
+//    }
 
     @Override
     public void onBackPressed() {

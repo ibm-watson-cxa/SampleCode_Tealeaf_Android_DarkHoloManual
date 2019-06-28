@@ -8,8 +8,10 @@ package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.widget.Switch;
 
+import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 /**
@@ -26,5 +28,16 @@ public class ControlsActivity8 extends AppCompatActivity {
 
         Switch sw = findViewById(R.id.switch1);
         sw.setOnCheckedChangeListener(TLHelper.getCompoundButtonOnCheckedChangeListener());
+    }
+
+    /* Add touch event to collect gestures for Tealeaf.
+     *
+     * (non-Javadoc)
+     * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+     */
+    public boolean dispatchTouchEvent(MotionEvent e)
+    {
+        Tealeaf.dispatchTouchEvent(this, e);
+        return super.dispatchTouchEvent(e);
     }
 }

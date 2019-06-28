@@ -6,10 +6,12 @@
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
 
+import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -68,4 +70,15 @@ public class ControlsActivity3 extends AppCompatActivity {
     public void onBackPressed() {
         this.getParent().onBackPressed();
     }
+
+	/* Add touch event to collect gestures for Tealeaf.
+	 *
+	 * (non-Javadoc)
+	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+	 */
+	public boolean dispatchTouchEvent(MotionEvent e)
+	{
+		Tealeaf.dispatchTouchEvent(this, e);
+		return super.dispatchTouchEvent(e);
+	}
 }
