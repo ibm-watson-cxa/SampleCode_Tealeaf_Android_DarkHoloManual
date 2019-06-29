@@ -8,6 +8,7 @@ package com.tl.uic.appDarkHolo;
 
 import java.util.ArrayList;
 
+import com.tl.uic.Tealeaf;
 import com.tl.uic.app.model.Items;
 import com.tl.uic.app.model.Items.Item;
 import com.tl.uic.appDarkHolo.util.TLHelper;
@@ -18,6 +19,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -93,5 +95,16 @@ public class ControlsActivity7 extends AppCompatActivity {
 			convertView.setOnClickListener(TLHelper.getOnClickListener());
 			return convertView;
 		}
+	}
+
+	/* Add touch event to collect gestures for Tealeaf.
+	 *
+	 * (non-Javadoc)
+	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+	 */
+	public boolean dispatchTouchEvent(MotionEvent e)
+	{
+		Tealeaf.dispatchTouchEvent(this, e);
+		return super.dispatchTouchEvent(e);
 	}
 }

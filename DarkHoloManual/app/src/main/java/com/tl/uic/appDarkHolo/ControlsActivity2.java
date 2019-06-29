@@ -6,10 +6,11 @@
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
 
+import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
-
+import android.view.MotionEvent;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -61,5 +62,16 @@ public class ControlsActivity2 extends AppCompatActivity {
 	    
 	    RatingBar rab = (RatingBar) findViewById(R.id.ratingBar1);
 	    rab.setOnRatingBarChangeListener(TLHelper.getOnRatingBarChangeListener());
+	}
+
+	/* Add touch event to collect gestures for Tealeaf.
+	 *
+	 * (non-Javadoc)
+	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+	 */
+	public boolean dispatchTouchEvent(MotionEvent e)
+	{
+		Tealeaf.dispatchTouchEvent(this, e);
+		return super.dispatchTouchEvent(e);
 	}
 }
