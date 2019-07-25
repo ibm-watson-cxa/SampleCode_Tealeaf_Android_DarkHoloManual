@@ -6,12 +6,14 @@
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
 
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import android.view.MotionEvent;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,7 +30,7 @@ public class ControlsActivity5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Tealeaf.logEvent(v);
-                Builder builder = new Builder(v.getContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 String title = getString(R.string.alertTitle);
                 String message = getString(R.string.alertMessage1);
                 builder.setMessage(message)
@@ -60,5 +62,16 @@ public class ControlsActivity5 extends AppCompatActivity {
                 alertDialog.show(fm, "fragment_alert");
             }
         });
+    }
+
+    /* Add touch event to collect gestures for Tealeaf.
+     *
+     * (non-Javadoc)
+     * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+     */
+    public boolean dispatchTouchEvent(MotionEvent e)
+    {
+        Tealeaf.dispatchTouchEvent(this, e);
+        return super.dispatchTouchEvent(e);
     }
 }

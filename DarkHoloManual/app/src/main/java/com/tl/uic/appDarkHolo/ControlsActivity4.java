@@ -6,10 +6,11 @@
  ******************************************************************************/
 package com.tl.uic.appDarkHolo;
 
+import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.widget.AnalogClock;
 import android.widget.Chronometer;
 import android.widget.DatePicker;
@@ -18,6 +19,8 @@ import android.widget.TimePicker;
 import android.widget.TwoLineListItem;
 import android.widget.ZoomButton;
 import android.widget.ZoomControls;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 @SuppressWarnings("deprecation")
 public class ControlsActivity4 extends AppCompatActivity {
@@ -54,5 +57,16 @@ public class ControlsActivity4 extends AppCompatActivity {
 */	    
 	    TwoLineListItem tl = (TwoLineListItem) findViewById(R.id.twoLineListItem1);
 	    tl.setOnClickListener(TLHelper.getOnClickListener());
+	}
+
+	/* Add touch event to collect gestures for Tealeaf.
+	 *
+	 * (non-Javadoc)
+	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
+	 */
+	public boolean dispatchTouchEvent(MotionEvent e)
+	{
+		Tealeaf.dispatchTouchEvent(this, e);
+		return super.dispatchTouchEvent(e);
 	}
 }
