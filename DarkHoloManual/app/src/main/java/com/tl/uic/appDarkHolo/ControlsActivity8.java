@@ -8,11 +8,17 @@ package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 
 import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
 
 /**
  * @author ohernandezltmac
@@ -27,6 +33,57 @@ public class ControlsActivity8 extends AppCompatActivity {
 
         Switch sw = findViewById(R.id.switch1);
         sw.setOnCheckedChangeListener(TLHelper.getCompoundButtonOnCheckedChangeListener());
+
+        Button button = findViewById(R.id.button1);
+        final HashMap<String, String> data = new HashMap<>();
+        data.put("Foo", "Bar");
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Tealeaf.logCustomEvent("MyEvent", data);
+            }
+        });
+
+        button = findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value = data.get("key");
+                if(value == null) {
+                    Tealeaf.logException(new Exception("Custom Exception"));
+                }
+            }
+        });
+
+        button = findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            String imageUrl= "https://www.google.com";
+                            URL url = new URL(imageUrl);
+                            HttpURLConnection connection  = (HttpURLConnection) url.openConnection();
+                            Tealeaf.logConnection(imageUrl, 0, 0,  0, connection.getContentLength(), connection.getResponseCode());
+                        } catch (Exception e) {
+                            Tealeaf.logException(e);
+                        }
+                    }
+                });
+                thread.start();
+            }
+        });
+
+        button = findViewById(R.id.button4);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Tealeaf.logFormCompletion(true, true);
+            }
+        });
     }
 
     /* Add touch event to collect gestures for Tealeaf.
