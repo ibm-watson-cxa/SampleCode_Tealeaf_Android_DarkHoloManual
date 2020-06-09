@@ -64,7 +64,7 @@ public class ControlsActivity8 extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            String imageUrl= "https://www.google.com";
+                            String imageUrl= "https://acoustic.com/";
                             URL url = new URL(imageUrl);
                             HttpURLConnection connection  = (HttpURLConnection) url.openConnection();
                             Tealeaf.logConnection(imageUrl, 0, 0,  0, connection.getContentLength(), connection.getResponseCode());
@@ -76,6 +76,31 @@ public class ControlsActivity8 extends AppCompatActivity {
                 thread.start();
             }
         });
+
+        button = findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            String imageUrl= "http://www.google.com/";
+                            URL url = new URL(imageUrl);
+                            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+                            connection.setRequestMethod("POST");
+                            connection.connect();
+                            Tealeaf.logConnection(imageUrl, 0, 0,  0, connection.getContentLength(), connection.getResponseCode());
+                        } catch (Exception e) {
+                            Tealeaf.logException(e);
+                        }
+                    }
+                });
+                thread.start();
+            }
+        });
+
 
         button = findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
