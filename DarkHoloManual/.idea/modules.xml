@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DarkHoloManual.iml" filepath="$PROJECT_DIR$/DarkHoloManual.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DarkHoloManual.iml" filepath="$PROJECT_DIR$/DarkHoloManual.iml" group="DarkHoloManual" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="DarkHoloManual/app" />
     </modules>
   </component>
 </project>
