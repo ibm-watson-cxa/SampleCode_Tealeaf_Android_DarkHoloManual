@@ -11,21 +11,24 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.tl.uic.Tealeaf;
 
-public class ControlsActivity5 extends AppCompatActivity {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.controls5);
+public class ControlsActivity5 extends Fragment {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.controls5, container, false);
 
-        Button button = (Button) findViewById(R.id.button1);
+        Button button = (Button) v.findViewById(R.id.button1);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,27 +44,29 @@ public class ControlsActivity5 extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Tealeaf.logDialogEvent(dialog, id);
                                         dialog.cancel();
-                                        Tealeaf.logScreenLayout(ControlsActivity5.this.getParent(), "CA5", 500);
+                                        Tealeaf.logScreenLayout(ControlsActivity5.this.getActivity().getParent(), "CA5", 500);
                                     }
                                 });
                 final AlertDialog dialog = builder.create();
-                Tealeaf.logScreenLayoutSetOnShowListener(ControlsActivity5.this.getParent(), dialog);
+                Tealeaf.logScreenLayoutSetOnShowListener(ControlsActivity5.this.getActivity().getParent(), dialog);
                 dialog.show();
             }
         });
 
-        button = (Button) findViewById(R.id.button2);
+        button = (Button) v.findViewById(R.id.button2);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Tealeaf.logEvent(v);
 
-                FragmentManager fm = getSupportFragmentManager();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
                 String message = getString(R.string.alertMessage2);
                 MyDialogFragment alertDialog = MyDialogFragment.newInstance(message);
                 alertDialog.show(fm, "fragment_alert");
             }
         });
+
+        return v;
     }
 
     /* Add touch event to collect gestures for Tealeaf.
@@ -69,9 +74,9 @@ public class ControlsActivity5 extends AppCompatActivity {
      * (non-Javadoc)
      * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
      */
-    public boolean dispatchTouchEvent(MotionEvent e)
-    {
-        Tealeaf.dispatchTouchEvent(this, e);
-        return super.dispatchTouchEvent(e);
-    }
+//    public boolean dispatchTouchEvent(MotionEvent e)
+//    {
+//        Tealeaf.dispatchTouchEvent(this, e);
+//        return super.dispatchTouchEvent(e);
+//    }
 }

@@ -17,6 +17,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -27,20 +29,20 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ControlsActivity6 extends AppCompatActivity {
+public class ControlsActivity6 extends Fragment {
 	private ArrayList<? extends Item> data;
 	private Items items = Items.getInstance();
 	private String packageName;
-	
-	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.controls6);
 
-		packageName = this.getApplicationContext().getPackageName();
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View v = inflater.inflate(R.layout.controls6, container, false);
+
+		packageName = this.getActivity().getApplicationContext().getPackageName();
 	    data = items.getCategories();
 		
-	    ListView lv = (ListView) findViewById(R.id.listing1);
-	    lv.setAdapter(new MyCustomAdapter(this));
+	    ListView lv = (ListView) v.findViewById(R.id.listing1);
+	    lv.setAdapter(new MyCustomAdapter(this.getActivity()));
+	    return v;
 	}
 	
 	static class Vholder {
@@ -102,9 +104,9 @@ public class ControlsActivity6 extends AppCompatActivity {
 	 * (non-Javadoc)
 	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
 	 */
-	public boolean dispatchTouchEvent(MotionEvent e)
-	{
-		Tealeaf.dispatchTouchEvent(this, e);
-		return super.dispatchTouchEvent(e);
-	}
+//	public boolean dispatchTouchEvent(MotionEvent e)
+//	{
+//		Tealeaf.dispatchTouchEvent(this, e);
+//		return super.dispatchTouchEvent(e);
+//	}
 }

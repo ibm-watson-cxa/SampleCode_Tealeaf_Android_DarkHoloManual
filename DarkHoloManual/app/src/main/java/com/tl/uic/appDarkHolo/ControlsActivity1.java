@@ -10,8 +10,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import androidx.core.widget.NestedScrollView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
@@ -27,45 +31,45 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity1 extends AppCompatActivity {
-	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.controls1);
+public class ControlsActivity1 extends Fragment {
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	    View v = inflater.inflate(R.layout.controls1, container, false);
 
-	    TextView t = (TextView) findViewById(R.id.textView1);
+	    TextView t = (TextView) v.findViewById(R.id.textView1);
 	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    t = (TextView) findViewById(R.id.textView2);
+	    t = (TextView) v.findViewById(R.id.textView2);
 	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    t = (TextView) findViewById(R.id.textView3);
+	    t = (TextView) v.findViewById(R.id.textView3);
 	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    t = (TextView) findViewById(R.id.textView4);
+	    t = (TextView) v.findViewById(R.id.textView4);
 	    t.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    Button b = (Button) findViewById(R.id.button5);
+	    Button b = (Button) v.findViewById(R.id.button5);
 	    b.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    b = (Button) findViewById(R.id.button6);
+	    b = (Button) v.findViewById(R.id.button6);
 	    b.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    ImageButton ib = (ImageButton) findViewById(R.id.imageButton);
+	    ImageButton ib = (ImageButton) v.findViewById(R.id.imageButton);
 	    ib.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    ImageView iv = (ImageView) findViewById(R.id.imageView1);
+	    ImageView iv = (ImageView) v.findViewById(R.id.imageView1);
 	    iv.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    ToggleButton tb = (ToggleButton) findViewById(R.id.toggleButton1);
+	    ToggleButton tb = (ToggleButton) v.findViewById(R.id.toggleButton1);
 	    tb.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    MediaController mc = (MediaController) findViewById(R.id.mediaController1);
+	    MediaController mc = (MediaController) v.findViewById(R.id.mediaController1);
 	    mc.setOnClickListener(TLHelper.getOnClickListener());
 	    
-	    CheckBox cb = (CheckBox) findViewById(R.id.checkBox1);
+	    CheckBox cb = (CheckBox) v.findViewById(R.id.checkBox1);
 	    cb.setOnClickListener(TLHelper.getOnClickListener());
 
 
 		// Instrumentation for Scrollview screen capture
-		final NestedScrollView scrollView = (NestedScrollView) findViewById(R.id.scrollView1);
-		final Activity activity = this;
+		final NestedScrollView scrollView = (NestedScrollView) v.findViewById(R.id.scrollView1);
+		final Activity activity = this.getActivity();
 
 		scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
 			@Override
@@ -77,7 +81,7 @@ public class ControlsActivity1 extends AppCompatActivity {
 			}
 		});
 
-		Button logScreenButton = (Button) findViewById(R.id.buttonCaptureScreen);
+		Button logScreenButton = (Button) v.findViewById(R.id.buttonCaptureScreen);
 
 		logScreenButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -86,6 +90,7 @@ public class ControlsActivity1 extends AppCompatActivity {
 
 			}
 		});
+		return v;
 	}
 
 	/* Add touch event to collect gestures for Tealeaf.
@@ -93,9 +98,9 @@ public class ControlsActivity1 extends AppCompatActivity {
 	 * (non-Javadoc)
 	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
 	 */
-	public boolean dispatchTouchEvent(MotionEvent e)
-	{
-		Tealeaf.dispatchTouchEvent(this, e);
-		return super.dispatchTouchEvent(e);
-	}
+//	public boolean dispatchTouchEvent(MotionEvent e)
+//	{
+//		Tealeaf.dispatchTouchEvent(this.getActivity(), e);
+//		return super.dispatchTouchEvent(e);
+//	}
 }

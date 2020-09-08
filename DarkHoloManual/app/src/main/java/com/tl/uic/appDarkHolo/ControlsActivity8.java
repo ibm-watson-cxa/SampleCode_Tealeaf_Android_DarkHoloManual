@@ -7,14 +7,17 @@
 package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
 
 import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -23,18 +26,17 @@ import java.util.HashMap;
 /**
  * @author ohernandezltmac
  */
-public class ControlsActivity8 extends AppCompatActivity {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.controls8);
+public class ControlsActivity8 extends Fragment {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.controls8, container, false);
 
-        Switch sUw = findViewById(R.id.saveUname_switch);
+        Switch sUw = v.findViewById(R.id.saveUname_switch);
         sUw.setOnCheckedChangeListener(TLHelper.getCompoundButtonOnCheckedChangeListener());
 
-        Switch sw = findViewById(R.id.switch1);
+        Switch sw = v.findViewById(R.id.switch1);
         sw.setOnCheckedChangeListener(TLHelper.getCompoundButtonOnCheckedChangeListener());
 
-        Button button = findViewById(R.id.button1);
+        Button button = v.findViewById(R.id.button1);
         final HashMap<String, String> data = new HashMap<>();
         data.put("Foo", "Bar");
         button.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +46,7 @@ public class ControlsActivity8 extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.button2);
+        button = v.findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +57,7 @@ public class ControlsActivity8 extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.button3);
+        button = v.findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -77,7 +79,7 @@ public class ControlsActivity8 extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.button5);
+        button = v.findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -102,13 +104,14 @@ public class ControlsActivity8 extends AppCompatActivity {
         });
 
 
-        button = findViewById(R.id.button4);
+        button = v.findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Tealeaf.logFormCompletion(true, true);
             }
         });
+        return v;
     }
 
     /* Add touch event to collect gestures for Tealeaf.
@@ -116,9 +119,9 @@ public class ControlsActivity8 extends AppCompatActivity {
      * (non-Javadoc)
      * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
      */
-    public boolean dispatchTouchEvent(MotionEvent e)
-    {
-        Tealeaf.dispatchTouchEvent(this, e);
-        return super.dispatchTouchEvent(e);
-    }
+//    public boolean dispatchTouchEvent(MotionEvent e)
+//    {
+//        Tealeaf.dispatchTouchEvent(this, e);
+//        return super.dispatchTouchEvent(e);
+//    }
 }
