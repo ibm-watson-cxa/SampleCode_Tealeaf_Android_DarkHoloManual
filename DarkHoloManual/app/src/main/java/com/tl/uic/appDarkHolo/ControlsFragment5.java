@@ -11,23 +11,19 @@ package com.tl.uic.appDarkHolo;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
-
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import com.tl.uic.Tealeaf;
 
-public class ControlsActivity5 extends BaseFragment {
+public class ControlsFragment5 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.controls5, container, false);
 
@@ -47,11 +43,11 @@ public class ControlsActivity5 extends BaseFragment {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Tealeaf.logDialogEvent(dialog, id);
                                         dialog.cancel();
-                                        Tealeaf.logScreenLayout(ControlsActivity5.this.getActivity().getParent(), "CA5", 500);
+                                        Tealeaf.logScreenLayout(ControlsFragment5.this.getActivity(), "CA5", 500);
                                     }
                                 });
                 final AlertDialog dialog = builder.create();
-                Tealeaf.logScreenLayoutSetOnShowListener(ControlsActivity5.this.getActivity().getParent(), dialog);
+                Tealeaf.logScreenLayoutSetOnShowListener(ControlsFragment5.this.getActivity(), dialog);
                 dialog.show();
             }
         });
@@ -71,15 +67,4 @@ public class ControlsActivity5 extends BaseFragment {
 
         return v;
     }
-
-    /* Add touch event to collect gestures for Tealeaf.
-     *
-     * (non-Javadoc)
-     * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-     */
-//    public boolean dispatchTouchEvent(MotionEvent e)
-//    {
-//        Tealeaf.dispatchTouchEvent(this, e);
-//        return super.dispatchTouchEvent(e);
-//    }
 }

@@ -11,16 +11,15 @@ package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
 
+import androidx.fragment.app.Fragment;
+
 import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -29,7 +28,7 @@ import java.util.HashMap;
 /**
  * @author ohernandezltmac
  */
-public class ControlsActivity8 extends BaseFragment {
+public class ControlsFragment8 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.controls8, container, false);
 
@@ -116,15 +115,4 @@ public class ControlsActivity8 extends BaseFragment {
         });
         return v;
     }
-
-    /* Add touch event to collect gestures for Tealeaf.
-     *
-     * (non-Javadoc)
-     * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-     */
-//    public boolean dispatchTouchEvent(MotionEvent e)
-//    {
-//        Tealeaf.dispatchTouchEvent(this, e);
-//        return super.dispatchTouchEvent(e);
-//    }
 }

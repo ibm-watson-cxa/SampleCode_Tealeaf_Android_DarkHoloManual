@@ -9,12 +9,8 @@
  ********************************************************************************************/
 package com.tl.uic.appDarkHolo;
 
-import com.tl.uic.Tealeaf;
-import com.tl.uic.appDarkHolo.util.TLHelper;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -24,14 +20,16 @@ import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.Spinner;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
+
+import com.tl.uic.appDarkHolo.util.TLHelper;
 
 /**
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity2 extends BaseFragment {
+public class ControlsFragment2 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.controls2, container, false);
@@ -71,15 +69,4 @@ public class ControlsActivity2 extends BaseFragment {
 	    rab.setOnRatingBarChangeListener(TLHelper.getOnRatingBarChangeListener());
 	    return v;
 	}
-
-	/* Add touch event to collect gestures for Tealeaf.
-	 *
-	 * (non-Javadoc)
-	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-	 */
-//	public boolean dispatchTouchEvent(MotionEvent e)
-//	{
-//		Tealeaf.dispatchTouchEvent(this, e);
-//		return super.dispatchTouchEvent(e);
-//	}
 }

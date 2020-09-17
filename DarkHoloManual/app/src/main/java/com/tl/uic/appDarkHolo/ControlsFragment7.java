@@ -9,22 +9,11 @@
  ********************************************************************************************/
 package com.tl.uic.appDarkHolo;
 
-import java.util.ArrayList;
-
-import com.tl.uic.Tealeaf;
-import com.tl.uic.app.model.Items;
-import com.tl.uic.app.model.Items.Item;
-import com.tl.uic.appDarkHolo.util.TLHelper;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -32,18 +21,26 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ControlsActivity6 extends BaseFragment {
+import androidx.fragment.app.Fragment;
+
+import com.tl.uic.app.model.Items;
+import com.tl.uic.app.model.Items.Item;
+import com.tl.uic.appDarkHolo.util.TLHelper;
+
+import java.util.ArrayList;
+
+public class ControlsFragment7 extends Fragment {
 	private ArrayList<? extends Item> data;
 	private Items items = Items.getInstance();
 	private String packageName;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.controls6, container, false);
+		View v = inflater.inflate(R.layout.controls7, container, false);
 
 		packageName = this.getActivity().getApplicationContext().getPackageName();
 	    data = items.getCategories();
-		
-	    ListView lv = (ListView) v.findViewById(R.id.listing1);
+	    
+	    ListView lv = (ListView) v.findViewById(R.id.listing2);
 	    lv.setAdapter(new MyCustomAdapter(this.getActivity()));
 	    return v;
 	}
@@ -76,7 +73,7 @@ public class ControlsActivity6 extends BaseFragment {
 
 			if (convertView == null) {
 				LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				convertView = inflater.inflate(R.layout.listitem, null);
+				convertView = inflater.inflate(R.layout.listitemnodivider, null);
 				vh = new Vholder();
 				vh.name = (TextView) convertView.findViewById(R.id.item_name);
 				vh.thumb = (ImageView) convertView.findViewById(R.id.item_icon);
@@ -101,15 +98,4 @@ public class ControlsActivity6 extends BaseFragment {
 			return convertView;
 		}
 	}
-
-	/* Add touch event to collect gestures for Tealeaf.
-	 *
-	 * (non-Javadoc)
-	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-	 */
-//	public boolean dispatchTouchEvent(MotionEvent e)
-//	{
-//		Tealeaf.dispatchTouchEvent(this, e);
-//		return super.dispatchTouchEvent(e);
-//	}
 }

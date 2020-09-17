@@ -9,12 +9,8 @@
  ********************************************************************************************/
 package com.tl.uic.appDarkHolo;
 
-import com.tl.uic.Tealeaf;
-import com.tl.uic.appDarkHolo.util.TLHelper;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AnalogClock;
@@ -26,11 +22,12 @@ import android.widget.TwoLineListItem;
 import android.widget.ZoomButton;
 import android.widget.ZoomControls;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.tl.uic.appDarkHolo.util.TLHelper;
 
-public class ControlsActivity4 extends BaseFragment {
+
+public class ControlsFragment4 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.controls4, container, false);
 
@@ -65,15 +62,4 @@ public class ControlsActivity4 extends BaseFragment {
 	    tl.setOnClickListener(TLHelper.getOnClickListener());
 	    return v;
 	}
-
-	/* Add touch event to collect gestures for Tealeaf.
-	 *
-	 * (non-Javadoc)
-	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-	 */
-//	public boolean dispatchTouchEvent(MotionEvent e)
-//	{
-//		Tealeaf.dispatchTouchEvent(this, e);
-//		return super.dispatchTouchEvent(e);
-//	}
 }

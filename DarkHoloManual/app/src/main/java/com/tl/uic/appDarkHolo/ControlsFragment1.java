@@ -11,12 +11,7 @@ package com.tl.uic.appDarkHolo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import androidx.core.widget.NestedScrollView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -27,6 +22,9 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+
 import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
 
@@ -34,7 +32,7 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity1 extends BaseFragment {
+public class ControlsFragment1 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	    View v = inflater.inflate(R.layout.controls1, container, false);
@@ -95,15 +93,4 @@ public class ControlsActivity1 extends BaseFragment {
 		});
 		return v;
 	}
-
-	/* Add touch event to collect gestures for Tealeaf.
-	 *
-	 * (non-Javadoc)
-	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-	 */
-//	public boolean dispatchTouchEvent(MotionEvent e)
-//	{
-//		Tealeaf.dispatchTouchEvent(this.getActivity(), e);
-//		return super.dispatchTouchEvent(e);
-//	}
 }

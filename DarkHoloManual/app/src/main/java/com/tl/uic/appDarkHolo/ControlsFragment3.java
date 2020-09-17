@@ -9,27 +9,24 @@
  ********************************************************************************************/
 package com.tl.uic.appDarkHolo;
 
-import com.ibm.eo.EOCore;
-import com.tl.uic.Tealeaf;
-import com.tl.uic.TealeafEOLifecycleObject;
-import com.tl.uic.appDarkHolo.util.TLHelper;
-
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.MultiAutoCompleteTextView;
+
+import androidx.fragment.app.Fragment;
+
+import com.ibm.eo.EOCore;
+import com.tl.uic.Tealeaf;
+import com.tl.uic.TealeafEOLifecycleObject;
+import com.tl.uic.appDarkHolo.util.TLHelper;
 
 
-public class ControlsActivity3 extends BaseFragment {
+public class ControlsFragment3 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.controls3, container, false);
@@ -85,20 +82,4 @@ public class ControlsActivity3 extends BaseFragment {
 	private static final String[] COUNTRIES = new String[] {
         "Belgium", "France", "Italy", "Germany", "Spain"
     };
-
-//    @Override
-//    public void onBackPressed() {
-//        this.getActivity().getParent().onBackPressed();
-//    }
-
-	/* Add touch event to collect gestures for Tealeaf.
-	 *
-	 * (non-Javadoc)
-	 * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
-	 */
-//	public boolean dispatchTouchEvent(MotionEvent e)
-//	{
-//		Tealeaf.dispatchTouchEvent(this, e);
-//		return super.dispatchTouchEvent(e);
-//	}
 }

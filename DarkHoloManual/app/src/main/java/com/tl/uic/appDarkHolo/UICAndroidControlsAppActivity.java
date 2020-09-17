@@ -18,6 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.tl.uic.Tealeaf;
+import com.tl.uic.model.ScreenviewType;
 
 public class UICAndroidControlsAppActivity extends AppCompatActivity {
     private TabAdapter adapter;
@@ -34,14 +35,14 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
-        adapter.addFragment(new ControlsActivity1(), "c1");
-        adapter.addFragment(new ControlsActivity2(), "c2");
-        adapter.addFragment(new ControlsActivity3(), "c3");
-        adapter.addFragment(new ControlsActivity4(), "c4");
-        adapter.addFragment(new ControlsActivity5(), "c5");
-        adapter.addFragment(new ControlsActivity6(), "c6");
-        adapter.addFragment(new ControlsActivity7(), "c7");
-        adapter.addFragment(new ControlsActivity8(), "c8");
+        adapter.addFragment(new ControlsFragment1(), "c1");
+        adapter.addFragment(new ControlsFragment2(), "c2");
+        adapter.addFragment(new ControlsFragment3(), "c3");
+        adapter.addFragment(new ControlsFragment4(), "c4");
+        adapter.addFragment(new ControlsFragment5(), "c5");
+        adapter.addFragment(new ControlsFragment6(), "c6");
+        adapter.addFragment(new ControlsFragment7(), "c7");
+        adapter.addFragment(new ControlsFragment8(), "c8");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -52,7 +53,8 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-//                Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), 1000);
+                // Each tab contains a Fragment, we'll log a screenview and its content.  Note:  Without new screenview load, replay renders content as Dynamic type in the same bucket.
+                Tealeaf.logScreenview(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), ScreenviewType.LOAD);
                 Tealeaf.onResumeFragment(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), adapter.getCurrentFragment());
             }
 
@@ -61,13 +63,9 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
             }
         });
 
-        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "ControlActivity1", 1500);
+        // This is the Home screen Fragment content
+        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "ControlsFragment1", 1500);
     }
-
-//	@Override
-//	public void onTabChanged(String arg0) {
-//		Tealeaf.logEvent(getTabHost().getCurrentTabView(), "click");
-//	}
 
     /* Add touch event to collect gestures for Tealeaf.
      *
@@ -78,14 +76,4 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
         Tealeaf.dispatchTouchEvent(this, e);
         return super.dispatchTouchEvent(e);
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        TabHost tabHost = getTabHost();  // The activity TabHost
-//        TabHost.TabSpec spec;  // Reusable TabSpec for each tab
-//        Intent intent;  // Reusable Intent for each tab
-//        tabHost.setCurrentTab(0);
-//    }
-
-
 }

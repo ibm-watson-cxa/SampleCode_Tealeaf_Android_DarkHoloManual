@@ -12,16 +12,16 @@ package com.tl.uic.appDarkHolo;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.tl.uic.Tealeaf;
-import com.tl.uic.util.DialogLogScreenTask;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+
+import com.tl.uic.Tealeaf;
+import com.tl.uic.util.DialogLogScreenTask;
 
 
 public class MyDialogFragment extends DialogFragment {
