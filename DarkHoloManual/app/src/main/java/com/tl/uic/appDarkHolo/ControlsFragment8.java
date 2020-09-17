@@ -53,7 +53,7 @@ public class ControlsFragment8 extends Fragment {
             @Override
             public void onClick(View view) {
                 String value = data.get("key");
-                if(value == null) {
+                if (value == null) {
                     Tealeaf.logException(new Exception("Custom Exception"));
                 }
             }
@@ -68,10 +68,10 @@ public class ControlsFragment8 extends Fragment {
                     @Override
                     public void run() {
                         try {
-                            String imageUrl= "https://acoustic.com/";
+                            String imageUrl = "https://acoustic.com/";
                             URL url = new URL(imageUrl);
-                            HttpURLConnection connection  = (HttpURLConnection) url.openConnection();
-                            Tealeaf.logConnection(imageUrl, 0, 0,  0, connection.getContentLength(), connection.getResponseCode());
+                            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                            Tealeaf.logConnection(imageUrl, 0, 0, 0, connection.getContentLength(), connection.getResponseCode());
                         } catch (Exception e) {
                             Tealeaf.logException(e);
                         }
@@ -90,12 +90,12 @@ public class ControlsFragment8 extends Fragment {
                     @Override
                     public void run() {
                         try {
-                            String imageUrl= "http://www.google.com/";
+                            String imageUrl = "http://www.google.com/";
                             URL url = new URL(imageUrl);
-                            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+                            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                             connection.setRequestMethod("POST");
                             connection.connect();
-                            Tealeaf.logConnection(imageUrl, 0, 0,  0, connection.getContentLength(), connection.getResponseCode());
+                            Tealeaf.logConnection(imageUrl, 0, 0, 0, connection.getContentLength(), connection.getResponseCode());
                         } catch (Exception e) {
                             Tealeaf.logException(e);
                         }

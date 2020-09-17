@@ -35,35 +35,35 @@
       "CaptureLayoutOn": 0,
       "CaptureScreenshotOn": 0
     },
-    "ControlsActivity1": {
+    "ControlsFragment1": {
       "DisplayName": "CA1",
       "CaptureLayoutDelay": 800
     },
-    "ControlsActivity2": {
+    "ControlsFragment2": {
       "DisplayName": "CA2",
       "CaptureLayoutDelay": 200
     },
-    "ControlsActivity3": {
+    "ControlsFragment3": {
       "DisplayName": "CA3",
       "CaptureLayoutDelay": 200
     },
-    "ControlsActivity4": {
+    "ControlsFragment4": {
       "DisplayName": "CA4",
       "CaptureLayoutDelay": 200
     },
-    "ControlsActivity5": {
+    "ControlsFragment5": {
       "DisplayName": "CA5",
       "CaptureLayoutDelay": 200
     },
-    "ControlsActivity6": {
+    "ControlsFragment6": {
       "DisplayName": "CA6",
       "CaptureLayoutDelay": 200
     },
-    "ControlsActivity7": {
+    "ControlsFragment7": {
       "DisplayName": "CA7",
       "CaptureLayoutDelay": 200
     },
-    "ControlsActivity8": {
+    "ControlsFragment8": {
       "DisplayName": "CA8",
       "CaptureLayoutDelay": 200
     }

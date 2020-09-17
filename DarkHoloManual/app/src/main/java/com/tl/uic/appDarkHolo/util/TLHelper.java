@@ -35,162 +35,150 @@ import androidx.fragment.app.Fragment;
 import com.tl.uic.Tealeaf;
 
 public class TLHelper {
-	
-	public static OnClickListener getOnClickListener() {
-		OnClickListener onClickListener = new OnClickListener() {
-			
-			@Override
-			public void onClick(View view) {
-				Tealeaf.logEvent(view, "Click");
-			}
-		};
 
-		return onClickListener;
-	}
-	
-	public static OnItemClickListener getOnItemClickListener() {
-		
-		OnItemClickListener onItemClickListener = new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				Tealeaf.logEvent(arg1, "ItemClick");
-			}
-		};
-		
-		return onItemClickListener;
-	}
-	
-	public static OnItemSelectedListener onItemSelected() {
-		
-		OnItemSelectedListener onItemSelectedListener = new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-			    Tealeaf.logEvent(parent, "ItemSelected");
-			}
+    public static OnClickListener getOnClickListener() {
+        OnClickListener onClickListener = new OnClickListener() {
 
-		    public void onNothingSelected(@SuppressWarnings("rawtypes") AdapterView parent) {
-		      // Do nothing.
-		    }
-		};
-		
-		return onItemSelectedListener;
+            @Override
+            public void onClick(View view) {
+                Tealeaf.logEvent(view, "Click");
+            }
+        };
+
+        return onClickListener;
     }
-	
-	public static OnSeekBarChangeListener getOnSeekBarChangeListener() {
-		
-		OnSeekBarChangeListener onClickListener = new OnSeekBarChangeListener() {
-			
-			@Override
-			public void onStopTrackingTouch(SeekBar seekBar) {
-				Tealeaf.logEvent(seekBar, "StopTrackingTouch");
-			}
-			
-			@Override
-			public void onStartTrackingTouch(SeekBar seekBar) {
-			}
-			
-			@Override
-			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-			}
-		};
-		
-		return onClickListener;
-	}
-	
-	public static OnCheckedChangeListener getOnCheckedChangeListener() {
-		
-		OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				Tealeaf.logEvent(group.findViewById(group.getCheckedRadioButtonId()), "CheckedChanged");
-			}
-		};
-		
-		return onCheckedChangeListener;
-	}
 
-	public static CompoundButton.OnCheckedChangeListener getCompoundButtonOnCheckedChangeListener() {
+    public static OnItemClickListener getOnItemClickListener() {
 
-		CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+        OnItemClickListener onItemClickListener = new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                Tealeaf.logEvent(arg1, "ItemClick");
+            }
+        };
 
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        return onItemClickListener;
+    }
+
+    public static OnItemSelectedListener onItemSelected() {
+
+        OnItemSelectedListener onItemSelectedListener = new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                Tealeaf.logEvent(parent, "ItemSelected");
+            }
+
+            public void onNothingSelected(@SuppressWarnings("rawtypes") AdapterView parent) {
+                // Do nothing.
+            }
+        };
+
+        return onItemSelectedListener;
+    }
+
+    public static OnSeekBarChangeListener getOnSeekBarChangeListener() {
+
+        OnSeekBarChangeListener onClickListener = new OnSeekBarChangeListener() {
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Tealeaf.logEvent(seekBar, "StopTrackingTouch");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            }
+        };
+
+        return onClickListener;
+    }
+
+    public static OnCheckedChangeListener getOnCheckedChangeListener() {
+
+        OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                Tealeaf.logEvent(group.findViewById(group.getCheckedRadioButtonId()), "CheckedChanged");
+            }
+        };
+
+        return onCheckedChangeListener;
+    }
+
+    public static CompoundButton.OnCheckedChangeListener getCompoundButtonOnCheckedChangeListener() {
+
+        CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Tealeaf.logEvent(buttonView, "Click");
-			}
-		};
+            }
+        };
 
-		return onCheckedChangeListener;
-	}
-	
-	public static OnRatingBarChangeListener getOnRatingBarChangeListener() {
-		
-		OnRatingBarChangeListener onRatingBarChangeListener = new OnRatingBarChangeListener() {
-			
-			@Override
-			public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-				Tealeaf.logEvent(ratingBar, "RatingChanged");
-			}
-		};
-		
-		return onRatingBarChangeListener;
-	}
-	
-	public static OnDateChangedListener getOnDateChangedListener() {
-		
-		OnDateChangedListener onDateChangedListener = new OnDateChangedListener() {
-			
-			@Override
-			public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-				Tealeaf.logEvent(view, "DateChanged");
-			}
-		};
-		
-		return onDateChangedListener;
-	}
-	
-	public static void addFocusAndRegister(TextView textView, Activity activity) {
-		
-		textView.setOnFocusChangeListener(new OnFocusChangeListener() {
-			
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-    				InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-    				imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
-    				
-    				KeyboardView keyboardView = new KeyboardView(v.getContext().getApplicationContext(), null);
-    				Tealeaf.logEvent(keyboardView , Tealeaf.TLF_UI_KEYBOARD_DID_SHOW_NOTIFICATION);
-    				Tealeaf.logEvent(v, Tealeaf.TLF_ON_FOCUS_CHANGE_IN);
-				} else {
-    				com.tl.uic.Tealeaf.logEvent(v, com.tl.uic.Tealeaf.TLF_ON_FOCUS_CHANGE_OUT);
-    				InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-    				imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-    				
-    				KeyboardView keyboardView = new KeyboardView(v.getContext().getApplicationContext(), null);
-    				Tealeaf.logEvent(keyboardView , Tealeaf.TLF_UI_KEYBOARD_DID_HIDE_NOTIFICATION);
-    			}
-			}
-		});
-		
-		Tealeaf.registerFormField(textView, activity);
-	}
-	
-//	public static void logScreenLayoutOnCreate(final Fragment fragment, final Activity activity) {
-//		Tealeaf.logScreenLayoutOnCreate(activity, getLogicalPageName(null, fragment));
-//	}
-	
-//	public static void logScreenLayoutOnCreate(final Fragment fragment, final Activity activity, final String logicalPageName) {
-//		Tealeaf.logScreenLayoutOnCreate(activity, getLogicalPageName(logicalPageName, fragment));
-//	}
-	
-//	public static void logScreenLayout(final Fragment fragment, final Activity activity, final String logicalPageName, int delayMS) {
-//		Tealeaf.logScreenLayout(activity, getLogicalPageName(logicalPageName, fragment), delayMS);
-//	}
-	
-	public static String getLogicalPageName(String logicalPageName, Fragment fragment) {
-		 if ((logicalPageName == null) || (logicalPageName.equals(""))) {
-	         logicalPageName = fragment.getClass().getName().substring(fragment.getClass().getName().lastIndexOf('.') + 1);
-	     }
-		 return logicalPageName;
-	}
+        return onCheckedChangeListener;
+    }
+
+    public static OnRatingBarChangeListener getOnRatingBarChangeListener() {
+
+        OnRatingBarChangeListener onRatingBarChangeListener = new OnRatingBarChangeListener() {
+
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                Tealeaf.logEvent(ratingBar, "RatingChanged");
+            }
+        };
+
+        return onRatingBarChangeListener;
+    }
+
+    public static OnDateChangedListener getOnDateChangedListener() {
+
+        OnDateChangedListener onDateChangedListener = new OnDateChangedListener() {
+
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Tealeaf.logEvent(view, "DateChanged");
+            }
+        };
+
+        return onDateChangedListener;
+    }
+
+    public static void addFocusAndRegister(TextView textView, Activity activity) {
+
+        textView.setOnFocusChangeListener(new OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
+
+                    KeyboardView keyboardView = new KeyboardView(v.getContext().getApplicationContext(), null);
+                    Tealeaf.logEvent(keyboardView, Tealeaf.TLF_UI_KEYBOARD_DID_SHOW_NOTIFICATION);
+                    Tealeaf.logEvent(v, Tealeaf.TLF_ON_FOCUS_CHANGE_IN);
+                } else {
+                    com.tl.uic.Tealeaf.logEvent(v, com.tl.uic.Tealeaf.TLF_ON_FOCUS_CHANGE_OUT);
+                    InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                    KeyboardView keyboardView = new KeyboardView(v.getContext().getApplicationContext(), null);
+                    Tealeaf.logEvent(keyboardView, Tealeaf.TLF_UI_KEYBOARD_DID_HIDE_NOTIFICATION);
+                }
+            }
+        });
+
+        Tealeaf.registerFormField(textView, activity);
+    }
+
+    public static String getLogicalPageName(String logicalPageName, Fragment fragment) {
+        if ((logicalPageName == null) || (logicalPageName.equals(""))) {
+            logicalPageName = fragment.getClass().getName().substring(fragment.getClass().getName().lastIndexOf('.') + 1);
+        }
+        return logicalPageName;
+    }
 }

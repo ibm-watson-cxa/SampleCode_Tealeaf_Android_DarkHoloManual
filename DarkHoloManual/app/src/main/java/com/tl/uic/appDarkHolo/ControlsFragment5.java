@@ -27,7 +27,7 @@ public class ControlsFragment5 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.controls5, container, false);
 
-        Button button = (Button) v.findViewById(R.id.button1);
+        Button button = v.findViewById(R.id.button1);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +52,7 @@ public class ControlsFragment5 extends Fragment {
             }
         });
 
-        button = (Button) v.findViewById(R.id.button2);
+        button = v.findViewById(R.id.button2);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

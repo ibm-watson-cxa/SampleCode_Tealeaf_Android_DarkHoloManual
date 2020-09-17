@@ -30,67 +30,66 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
 
 /**
  * @author ohernandezltmac
- *
  */
 public class ControlsFragment1 extends Fragment {
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-	    View v = inflater.inflate(R.layout.controls1, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.controls1, container, false);
 
-	    TextView t = (TextView) v.findViewById(R.id.textView1);
-	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    t = (TextView) v.findViewById(R.id.textView2);
-	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    t = (TextView) v.findViewById(R.id.textView3);
-	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    t = (TextView) v.findViewById(R.id.textView4);
-	    t.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    Button b = (Button) v.findViewById(R.id.button5);
-	    b.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    b = (Button) v.findViewById(R.id.button6);
-	    b.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    ImageButton ib = (ImageButton) v.findViewById(R.id.imageButton);
-	    ib.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    ImageView iv = (ImageView) v.findViewById(R.id.imageView1);
-	    iv.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    ToggleButton tb = (ToggleButton) v.findViewById(R.id.toggleButton1);
-	    tb.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    MediaController mc = (MediaController) v.findViewById(R.id.mediaController1);
-	    mc.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    CheckBox cb = (CheckBox) v.findViewById(R.id.checkBox1);
-	    cb.setOnClickListener(TLHelper.getOnClickListener());
+        TextView t = v.findViewById(R.id.textView1);
+        t.setOnClickListener(TLHelper.getOnClickListener());
+        t = v.findViewById(R.id.textView2);
+        t.setOnClickListener(TLHelper.getOnClickListener());
+        t = v.findViewById(R.id.textView3);
+        t.setOnClickListener(TLHelper.getOnClickListener());
+        t = v.findViewById(R.id.textView4);
+        t.setOnClickListener(TLHelper.getOnClickListener());
+
+        Button b = v.findViewById(R.id.button5);
+        b.setOnClickListener(TLHelper.getOnClickListener());
+
+        b = v.findViewById(R.id.button6);
+        b.setOnClickListener(TLHelper.getOnClickListener());
+
+        ImageButton ib = v.findViewById(R.id.imageButton);
+        ib.setOnClickListener(TLHelper.getOnClickListener());
+
+        ImageView iv = v.findViewById(R.id.imageView1);
+        iv.setOnClickListener(TLHelper.getOnClickListener());
+
+        ToggleButton tb = v.findViewById(R.id.toggleButton1);
+        tb.setOnClickListener(TLHelper.getOnClickListener());
+
+        MediaController mc = v.findViewById(R.id.mediaController1);
+        mc.setOnClickListener(TLHelper.getOnClickListener());
+
+        CheckBox cb = v.findViewById(R.id.checkBox1);
+        cb.setOnClickListener(TLHelper.getOnClickListener());
 
 
-		// Instrumentation for Scrollview screen capture
-		final NestedScrollView scrollView = (NestedScrollView) v.findViewById(R.id.scrollView1);
-		final Activity activity = this.getActivity();
+        // Instrumentation for Scrollview screen capture
+        final NestedScrollView scrollView = v.findViewById(R.id.scrollView1);
+        final Activity activity = this.getActivity();
 
-		scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-			@Override
-			public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-				// Scroll offset before calling Tealeaf Logscreen API
-				if (scrollY - oldScrollY > 100) {
-					Tealeaf.logScreenLayout(activity, "CustomScrollViewLog");
-				}
-			}
-		});
+        scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                // Scroll offset before calling Tealeaf Logscreen API
+                if (scrollY - oldScrollY > 100) {
+                    Tealeaf.logScreenLayout(activity, "CustomScrollViewLog");
+                }
+            }
+        });
 
-		Button logScreenButton = (Button) v.findViewById(R.id.buttonCaptureScreen);
+        Button logScreenButton = v.findViewById(R.id.buttonCaptureScreen);
 
-		logScreenButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Tealeaf.logScreenLayout(activity, "CustomButtonLog", 10);
+        logScreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Tealeaf.logScreenLayout(activity, "CustomButtonLog", 10);
 
-			}
-		});
-		return v;
-	}
+            }
+        });
+        return v;
+    }
 }

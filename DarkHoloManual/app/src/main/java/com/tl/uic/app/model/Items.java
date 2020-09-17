@@ -9,15 +9,15 @@
  ********************************************************************************************/
 package com.tl.uic.app.model;
 
-import java.util.ArrayList;
-
 import com.tl.uic.appDarkHolo.R;
+
+import java.util.ArrayList;
 
 public class Items {
     private static final Items INST = new Items();
 
     private Items() {
-    };
+    }
 
     public static Items getInstance() {
         return INST;
@@ -26,11 +26,11 @@ public class Items {
     public static final int ROOT_CATEGORY_ID = -1;
 
     private Category[] categories = {
-			new Category("Apparel", R.drawable.highheel3, 0, ROOT_CATEGORY_ID),
-			new Category("Electronics", R.drawable.laptop4, 1, ROOT_CATEGORY_ID),
-			new Category("Furniture", R.drawable.furniture_1_sm, 2, ROOT_CATEGORY_ID), };
+            new Category("Apparel", R.drawable.highheel3, 0, ROOT_CATEGORY_ID),
+            new Category("Electronics", R.drawable.laptop4, 1, ROOT_CATEGORY_ID),
+            new Category("Furniture", R.drawable.furniture_1_sm, 2, ROOT_CATEGORY_ID),};
 
-  
+
     public ArrayList<Category> getCategories() {
         ArrayList<Category> results = new ArrayList<Category>();
         for (Category cat : categories) {
@@ -88,7 +88,7 @@ public class Items {
         }
 
         public Product(String name, int thumbnail, int picture, String url,
-                double price, int id, int categoryId) {
+                       double price, int id, int categoryId) {
             this.categoryId = categoryId;
             this.id = id;
             this.name = name;
@@ -100,7 +100,7 @@ public class Items {
         }
 
         public Product(String name, int thumbnail, int picture, String url,
-                double price, int id, int categoryId, boolean failtoadd) {
+                       double price, int id, int categoryId, boolean failtoadd) {
             this.categoryId = categoryId;
             this.id = id;
             this.name = name;

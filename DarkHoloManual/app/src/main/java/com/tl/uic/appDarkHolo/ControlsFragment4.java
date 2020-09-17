@@ -28,38 +28,38 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
 
 
 public class ControlsFragment4 extends Fragment {
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.controls4, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.controls4, container, false);
 
-	    TimePicker tp = (TimePicker) v.findViewById(R.id.timePicker1);
-	    tp.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    DatePicker dp = (DatePicker) v.findViewById(R.id.datePicker1);
-	    //Date now = new Date();
-	    //dp.init(now.getYear(), now.getMonth(), now.getDay(), TLHelper.getOnDateChangedListener());
-	    dp.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    Chronometer c = (Chronometer) v.findViewById(R.id.chronometer1);
-	    c.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    AnalogClock ac = (AnalogClock) v.findViewById(R.id.analogClock1);
-	    ac.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    DigitalClock dc = (DigitalClock) v.findViewById(R.id.digitalClock1);
-	    dc.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    ZoomButton zb = (ZoomButton) v.findViewById(R.id.zoomButton1);
-	    zb.setOnClickListener(TLHelper.getOnClickListener());
-	    
-	    ZoomControls zc = (ZoomControls) v.findViewById(R.id.zoomControls1);
-	    zc.setOnZoomInClickListener(TLHelper.getOnClickListener());
-	    zc.setOnZoomOutClickListener(TLHelper.getOnClickListener());
+        TimePicker tp = v.findViewById(R.id.timePicker1);
+        tp.setOnClickListener(TLHelper.getOnClickListener());
+
+        DatePicker dp = v.findViewById(R.id.datePicker1);
+        //Date now = new Date();
+        //dp.init(now.getYear(), now.getMonth(), now.getDay(), TLHelper.getOnDateChangedListener());
+        dp.setOnClickListener(TLHelper.getOnClickListener());
+
+        Chronometer c = v.findViewById(R.id.chronometer1);
+        c.setOnClickListener(TLHelper.getOnClickListener());
+
+        AnalogClock ac = v.findViewById(R.id.analogClock1);
+        ac.setOnClickListener(TLHelper.getOnClickListener());
+
+        DigitalClock dc = v.findViewById(R.id.digitalClock1);
+        dc.setOnClickListener(TLHelper.getOnClickListener());
+
+        ZoomButton zb = v.findViewById(R.id.zoomButton1);
+        zb.setOnClickListener(TLHelper.getOnClickListener());
+
+        ZoomControls zc = v.findViewById(R.id.zoomControls1);
+        zc.setOnZoomInClickListener(TLHelper.getOnClickListener());
+        zc.setOnZoomOutClickListener(TLHelper.getOnClickListener());
 /*		Not a common control     
 	    DialerFilter df = (DialerFilter) findViewById(R.id.dialerFilter1);
 	    df.setOnClickListener(TLHelper.getOnClickListener());
-*/	    
-	    TwoLineListItem tl = (TwoLineListItem) v.findViewById(R.id.twoLineListItem1);
-	    tl.setOnClickListener(TLHelper.getOnClickListener());
-	    return v;
-	}
+*/
+        TwoLineListItem tl = v.findViewById(R.id.twoLineListItem1);
+        tl.setOnClickListener(TLHelper.getOnClickListener());
+        return v;
+    }
 }

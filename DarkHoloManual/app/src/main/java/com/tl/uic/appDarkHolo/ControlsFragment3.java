@@ -27,59 +27,59 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
 
 
 public class ControlsFragment3 extends Fragment {
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.controls3, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.controls3, container, false);
 
-	    EditText et = (EditText) v.findViewById(R.id.editText1);
-	    
-	    TLHelper.addFocusAndRegister(et, this.getActivity());
-	    et = (EditText) v.findViewById(R.id.editText2);
-	    TLHelper.addFocusAndRegister(et, this.getActivity());
-	    et = (EditText) v.findViewById(R.id.editText3);
-	    TLHelper.addFocusAndRegister(et, this.getActivity());
-	    et = (EditText) v.findViewById(R.id.editText4);
-	    TLHelper.addFocusAndRegister(et, this.getActivity());
-	    et = (EditText) v.findViewById(R.id.editText5);
-	    TLHelper.addFocusAndRegister(et, this.getActivity());
+        EditText et = v.findViewById(R.id.editText1);
 
-	    final EditText postMessageUrl = v.findViewById(R.id.postMessageUrl);
-		postMessageUrl.setText(EOCore.getConfigItemString(Tealeaf.TLF_POST_MESSAGE_URL, TealeafEOLifecycleObject.getInstance()));
+        TLHelper.addFocusAndRegister(et, this.getActivity());
+        et = v.findViewById(R.id.editText2);
+        TLHelper.addFocusAndRegister(et, this.getActivity());
+        et = v.findViewById(R.id.editText3);
+        TLHelper.addFocusAndRegister(et, this.getActivity());
+        et = v.findViewById(R.id.editText4);
+        TLHelper.addFocusAndRegister(et, this.getActivity());
+        et = v.findViewById(R.id.editText5);
+        TLHelper.addFocusAndRegister(et, this.getActivity());
 
-		final EditText appKey = v.findViewById(R.id.appKey);
-		appKey.setText(EOCore.getConfigItemString(Tealeaf.TLF_APP_KEY, TealeafEOLifecycleObject.getInstance()));
+        final EditText postMessageUrl = v.findViewById(R.id.postMessageUrl);
+        postMessageUrl.setText(EOCore.getConfigItemString(Tealeaf.TLF_POST_MESSAGE_URL, TealeafEOLifecycleObject.getInstance()));
 
-	    Button btn = v.findViewById(R.id.saveButton);
-		btn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				boolean configModified = false;
-				if (!postMessageUrl.getText().equals((EOCore.getConfigItemString(Tealeaf.TLF_POST_MESSAGE_URL, TealeafEOLifecycleObject.getInstance())))) {
-					EOCore.updateConfig(Tealeaf.TLF_POST_MESSAGE_URL, postMessageUrl.getText().toString(), TealeafEOLifecycleObject.getInstance());
-					configModified = true;
-				}
-				if (!appKey.getText().equals((EOCore.getConfigItemString(Tealeaf.TLF_APP_KEY, TealeafEOLifecycleObject.getInstance())))) {
-					EOCore.updateConfig(Tealeaf.TLF_APP_KEY, appKey.getText().toString(), TealeafEOLifecycleObject.getInstance());
-					configModified = true;
-				}
+        final EditText appKey = v.findViewById(R.id.appKey);
+        appKey.setText(EOCore.getConfigItemString(Tealeaf.TLF_APP_KEY, TealeafEOLifecycleObject.getInstance()));
 
-				if (configModified) {
-					Tealeaf.disable();
-					Tealeaf.enable();
-				}
+        Button btn = v.findViewById(R.id.saveButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean configModified = false;
+                if (!postMessageUrl.getText().equals((EOCore.getConfigItemString(Tealeaf.TLF_POST_MESSAGE_URL, TealeafEOLifecycleObject.getInstance())))) {
+                    EOCore.updateConfig(Tealeaf.TLF_POST_MESSAGE_URL, postMessageUrl.getText().toString(), TealeafEOLifecycleObject.getInstance());
+                    configModified = true;
+                }
+                if (!appKey.getText().equals((EOCore.getConfigItemString(Tealeaf.TLF_APP_KEY, TealeafEOLifecycleObject.getInstance())))) {
+                    EOCore.updateConfig(Tealeaf.TLF_APP_KEY, appKey.getText().toString(), TealeafEOLifecycleObject.getInstance());
+                    configModified = true;
+                }
 
-				Tealeaf.logFormCompletion(true);
-			}
-		});
-	    
-	    AutoCompleteTextView acet = (AutoCompleteTextView) v.findViewById(R.id.autoCompleteTextView1);
-	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_dropdown_item_1line, COUNTRIES);
-	    acet.setAdapter(adapter);
-	    TLHelper.addFocusAndRegister(acet, this.getActivity());
-	    return v;
-	}
-	
-	private static final String[] COUNTRIES = new String[] {
-        "Belgium", "France", "Italy", "Germany", "Spain"
+                if (configModified) {
+                    Tealeaf.disable();
+                    Tealeaf.enable();
+                }
+
+                Tealeaf.logFormCompletion(true);
+            }
+        });
+
+        AutoCompleteTextView acet = v.findViewById(R.id.autoCompleteTextView1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        acet.setAdapter(adapter);
+        TLHelper.addFocusAndRegister(acet, this.getActivity());
+        return v;
+    }
+
+    private static final String[] COUNTRIES = new String[]{
+            "Belgium", "France", "Italy", "Germany", "Spain"
     };
 }

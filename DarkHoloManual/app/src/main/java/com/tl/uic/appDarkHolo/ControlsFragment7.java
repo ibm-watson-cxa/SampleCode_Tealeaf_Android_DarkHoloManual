@@ -30,72 +30,73 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
 import java.util.ArrayList;
 
 public class ControlsFragment7 extends Fragment {
-	private ArrayList<? extends Item> data;
-	private Items items = Items.getInstance();
-	private String packageName;
+    private ArrayList<? extends Item> data;
+    private Items items = Items.getInstance();
+    private String packageName;
 
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.controls7, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.controls7, container, false);
 
-		packageName = this.getActivity().getApplicationContext().getPackageName();
-	    data = items.getCategories();
-	    
-	    ListView lv = (ListView) v.findViewById(R.id.listing2);
-	    lv.setAdapter(new MyCustomAdapter(this.getActivity()));
-	    return v;
-	}
-	
-	static class Vholder {
-		TextView name;
-		ImageView thumb;
-	}
-	
-	public class MyCustomAdapter extends BaseAdapter {
-		Context context;
-		MyCustomAdapter(Context context) {
-			this.context = context;
-		}
-		
-		public int getCount() {
-			return data.size();
-		}
+        packageName = this.getActivity().getApplicationContext().getPackageName();
+        data = items.getCategories();
 
-		public Object getItem(int position) {
-			return data.get(position);
-		}
+        ListView lv = v.findViewById(R.id.listing2);
+        lv.setAdapter(new MyCustomAdapter(this.getActivity()));
+        return v;
+    }
 
-		public long getItemId(int position) {
-			return data.get(position).getId();
-		}
+    static class Vholder {
+        TextView name;
+        ImageView thumb;
+    }
 
-		public View getView(final int position, View convertView, ViewGroup parent) {
-			Vholder vh;
+    public class MyCustomAdapter extends BaseAdapter {
+        Context context;
 
-			if (convertView == null) {
-				LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				convertView = inflater.inflate(R.layout.listitemnodivider, null);
-				vh = new Vholder();
-				vh.name = (TextView) convertView.findViewById(R.id.item_name);
-				vh.thumb = (ImageView) convertView.findViewById(R.id.item_icon);
-				convertView.setTag(vh);
-				try {
-		            final Resources resources = getResources();
-		            int idItemName = resources.getIdentifier("item_name_" + position, "id", packageName);
-		            int idItemIcon = resources.getIdentifier("item_icon_" + position, "id", packageName);
-		            vh.name.setId(idItemName);
-		            vh.thumb.setId(idItemIcon);
-		        } catch (final Exception e) {
-		        	Log.d("SP", "Trying to get id property value.", e);
-		        }
-			} else {
-				vh = (Vholder) convertView.getTag();
-			}
+        MyCustomAdapter(Context context) {
+            this.context = context;
+        }
 
-			vh.name.setText(data.get(position).getName());
-			vh.thumb.setImageResource(data.get(position).getThumbnail());
+        public int getCount() {
+            return data.size();
+        }
 
-			convertView.setOnClickListener(TLHelper.getOnClickListener());
-			return convertView;
-		}
-	}
+        public Object getItem(int position) {
+            return data.get(position);
+        }
+
+        public long getItemId(int position) {
+            return data.get(position).getId();
+        }
+
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            Vholder vh;
+
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.listitemnodivider, null);
+                vh = new Vholder();
+                vh.name = convertView.findViewById(R.id.item_name);
+                vh.thumb = convertView.findViewById(R.id.item_icon);
+                convertView.setTag(vh);
+                try {
+                    final Resources resources = getResources();
+                    int idItemName = resources.getIdentifier("item_name_" + position, "id", packageName);
+                    int idItemIcon = resources.getIdentifier("item_icon_" + position, "id", packageName);
+                    vh.name.setId(idItemName);
+                    vh.thumb.setId(idItemIcon);
+                } catch (final Exception e) {
+                    Log.d("SP", "Trying to get id property value.", e);
+                }
+            } else {
+                vh = (Vholder) convertView.getTag();
+            }
+
+            vh.name.setText(data.get(position).getName());
+            vh.thumb.setImageResource(data.get(position).getThumbnail());
+
+            convertView.setOnClickListener(TLHelper.getOnClickListener());
+            return convertView;
+        }
+    }
 }

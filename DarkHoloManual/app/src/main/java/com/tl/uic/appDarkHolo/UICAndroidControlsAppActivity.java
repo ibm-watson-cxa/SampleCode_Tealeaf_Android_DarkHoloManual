@@ -32,8 +32,8 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.tab_layout);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        viewPager = findViewById(R.id.viewpager);
+        tabLayout = findViewById(R.id.sliding_tabs);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
         adapter.addFragment(new ControlsFragment1(), "c1");
         adapter.addFragment(new ControlsFragment2(), "c2");
@@ -55,7 +55,7 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 // Each tab contains a Fragment, we'll log a screenview and its content.  Note:  Without new screenview load, replay renders content as Dynamic type in the same bucket.
                 Tealeaf.logScreenview(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), ScreenviewType.LOAD);
-                Tealeaf.onResumeFragment(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), adapter.getCurrentFragment());
+                Tealeaf.onResumeFragment(UICAndroidControlsAppActivity.this, null, adapter.getCurrentFragment());
             }
 
             @Override
@@ -63,8 +63,8 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
             }
         });
 
-        // This is the Home screen Fragment content
-        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "ControlsFragment1", 1500);
+        // This is the Home screen Fragment content.
+        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "CA1", 2000);
     }
 
     /* Add touch event to collect gestures for Tealeaf.
