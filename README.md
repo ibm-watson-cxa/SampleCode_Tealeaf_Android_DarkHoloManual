@@ -1,4 +1,4 @@
 # SampleCode_Tealeaf_DarkHoloManual
 DarkHoloManual instrumented with Tealeaf sdk.
 
-Built with Android Studio 3.4.1, Gradle version 5.1.1 Support AndroidX, API level 16 to 29.
+Built with Android Studio 4.0, Gradle version 6.1.1 Support AndroidX, API level 16 to 30.
