@@ -29,7 +29,7 @@ import java.util.HashMap;
 /**
  * @author ohernandezltmac
  */
-public class ControlsActivity8 extends Fragment {
+public class ControlsActivity8 extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.controls8, container, false);
 

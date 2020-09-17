@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DarkHoloManual.iml" filepath="$PROJECT_DIR$/DarkHoloManual.iml" group="DarkHoloManual" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DarkHoloManual-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DarkHoloManual-app.iml" group="DarkHoloManual/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SampleCode_Tealeaf_Android_DarkHoloManual-DarkHoloManual.iml" filepath="$PROJECT_DIR$/.idea/modules/SampleCode_Tealeaf_Android_DarkHoloManual-DarkHoloManual.iml" group="DarkHoloManual" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="DarkHoloManual/app" />
     </modules>
   </component>

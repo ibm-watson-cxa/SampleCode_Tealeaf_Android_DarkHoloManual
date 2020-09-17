@@ -34,7 +34,7 @@ import com.tl.uic.appDarkHolo.util.TLHelper;
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity1 extends Fragment {
+public class ControlsActivity1 extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	    View v = inflater.inflate(R.layout.controls1, container, false);

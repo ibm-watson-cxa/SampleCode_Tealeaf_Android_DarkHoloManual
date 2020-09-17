@@ -1,12 +1,12 @@
 /********************************************************************************************
-* Copyright (C) 2020 Acoustic, L.P. All rights reserved.
-*
-* NOTICE: This file contains material that is confidential and proprietary to
-* Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
-* industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
-* Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
-* prohibited.
-********************************************************************************************/
+ * Copyright (C) 2020 Acoustic, L.P. All rights reserved.
+ *
+ * NOTICE: This file contains material that is confidential and proprietary to
+ * Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+ * industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+ * Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+ * prohibited.
+ ********************************************************************************************/
 package com.tl.uic.appDarkHolo;
 
 import android.os.Bundle;
@@ -23,12 +23,12 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-	 				 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.tab_layout);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -49,17 +49,19 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             }
+
             @Override
             public void onPageSelected(int position) {
+//                Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), 1000);
+                Tealeaf.onResumeFragment(UICAndroidControlsAppActivity.this, adapter.getCurrentFragment().getClass().getSimpleName(), adapter.getCurrentFragment());
             }
+
             @Override
             public void onPageScrollStateChanged(int state) {
             }
         });
-        
 
-//
-//        tabHost.setOnTabChangedListener(this);
+        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "ControlActivity1", 1500);
     }
 
 //	@Override
@@ -72,8 +74,7 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
      * (non-Javadoc)
      * @see android.app.Activity#dispatchTouchEvent(android.view.MotionEvent)
      */
-    public boolean dispatchTouchEvent(MotionEvent e)
-    {
+    public boolean dispatchTouchEvent(MotionEvent e) {
         Tealeaf.dispatchTouchEvent(this, e);
         return super.dispatchTouchEvent(e);
     }
@@ -85,4 +86,6 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
 //        Intent intent;  // Reusable Intent for each tab
 //        tabHost.setCurrentTab(0);
 //    }
+
+
 }

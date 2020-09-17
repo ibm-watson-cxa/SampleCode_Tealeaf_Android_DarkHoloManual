@@ -32,7 +32,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ControlsActivity6 extends Fragment {
+public class ControlsActivity6 extends BaseFragment {
 	private ArrayList<? extends Item> data;
 	private Items items = Items.getInstance();
 	private String packageName;

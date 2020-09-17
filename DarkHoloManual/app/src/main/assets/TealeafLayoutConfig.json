@@ -30,9 +30,10 @@
       }
     },
     "UICAndroidControlsAppActivity": {
-      "ScreenChange": false,
+      "ScreenChange": true,
       "DisplayName": "UICAndroidControlsAppActivity",
-      "CaptureLayoutDelay": 1
+      "CaptureLayoutOn": 0,
+      "CaptureScreenshotOn": 0
     },
     "ControlsActivity1": {
       "DisplayName": "CA1",

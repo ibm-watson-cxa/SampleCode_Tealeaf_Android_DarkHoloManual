@@ -27,7 +27,7 @@ import android.widget.Button;
 
 import com.tl.uic.Tealeaf;
 
-public class ControlsActivity5 extends Fragment {
+public class ControlsActivity5 extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.controls5, container, false);
 

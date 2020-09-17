@@ -27,7 +27,7 @@
   "ColorPrimary": "#3F51B5",
   "ColorPrimaryDark": "#303F9F",
   "ColorAccent": "#FF4081",
-  "EnableGestureSwipeLogScreen": true,
+  "EnableGestureSwipeLogScreen": false,
   "EnableScreenshotCache": false,
   "FlushUpdatedPlaceHolders": false
 }

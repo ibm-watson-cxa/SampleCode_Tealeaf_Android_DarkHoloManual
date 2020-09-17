@@ -31,7 +31,7 @@ import androidx.fragment.app.Fragment;
  * @author ohernandezltmac
  *
  */
-public class ControlsActivity2 extends Fragment {
+public class ControlsActivity2 extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.controls2, container, false);

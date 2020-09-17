@@ -29,7 +29,7 @@ import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 
 
-public class ControlsActivity3 extends Fragment {
+public class ControlsActivity3 extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.controls3, container, false);
