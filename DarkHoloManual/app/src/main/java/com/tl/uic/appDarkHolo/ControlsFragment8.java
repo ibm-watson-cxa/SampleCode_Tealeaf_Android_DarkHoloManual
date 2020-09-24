@@ -20,9 +20,11 @@ import androidx.fragment.app.Fragment;
 
 import com.tl.uic.Tealeaf;
 import com.tl.uic.appDarkHolo.util.TLHelper;
+import com.tl.uic.model.Connection;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -70,8 +72,16 @@ public class ControlsFragment8 extends Fragment {
                         try {
                             String imageUrl = "https://acoustic.com/";
                             URL url = new URL(imageUrl);
-                            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                            Tealeaf.logConnection(imageUrl, 0, 0, 0, connection.getContentLength(), connection.getResponseCode());
+
+                            Connection connection = new com.tl.uic.model.Connection();
+                            connection.setUrl(imageUrl);
+                            connection.setInitTime(new Date().getTime());
+
+                            HttpURLConnection httpClient = (HttpURLConnection) url.openConnection();
+
+                            connection.setStatusCode(httpClient.getResponseCode());
+                            connection.setResponseDataSize(httpClient.getContentLength());
+                            Tealeaf.logConnection(connection);
                         } catch (Exception e) {
                             Tealeaf.logException(e);
                         }
@@ -92,10 +102,16 @@ public class ControlsFragment8 extends Fragment {
                         try {
                             String imageUrl = "http://www.google.com/";
                             URL url = new URL(imageUrl);
-                            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                            connection.setRequestMethod("POST");
-                            connection.connect();
-                            Tealeaf.logConnection(imageUrl, 0, 0, 0, connection.getContentLength(), connection.getResponseCode());
+
+                            Connection connection = new com.tl.uic.model.Connection();
+                            connection.setUrl(imageUrl);
+                            connection.setInitTime(new Date().getTime());
+
+                            HttpURLConnection httpClient = (HttpURLConnection) url.openConnection();
+
+                            connection.setStatusCode(httpClient.getResponseCode());
+                            connection.setResponseDataSize(httpClient.getContentLength());
+                            Tealeaf.logConnection(connection);
                         } catch (Exception e) {
                             Tealeaf.logException(e);
                         }
