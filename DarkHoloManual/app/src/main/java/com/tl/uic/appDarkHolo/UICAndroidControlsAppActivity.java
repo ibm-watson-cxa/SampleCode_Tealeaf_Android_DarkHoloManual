@@ -66,8 +66,6 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
 
         // This is the Home screen Fragment content.
         Tealeaf.logScreenview(UICAndroidControlsAppActivity.this, adapter.getItem(0).getClass().getSimpleName(), ScreenviewType.LOAD);
-//        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "CA1", 2000);
-
         Tealeaf.onResumeFragment(UICAndroidControlsAppActivity.this, null, adapter.getItem(0));
 
     }
