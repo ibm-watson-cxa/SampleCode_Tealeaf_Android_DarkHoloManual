@@ -43,6 +43,7 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
         adapter.addFragment(new ControlsFragment6(), "c6");
         adapter.addFragment(new ControlsFragment7(), "c7");
         adapter.addFragment(new ControlsFragment8(), "c8");
+
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -64,7 +65,11 @@ public class UICAndroidControlsAppActivity extends AppCompatActivity {
         });
 
         // This is the Home screen Fragment content.
-        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "CA1", 2000);
+        Tealeaf.logScreenview(UICAndroidControlsAppActivity.this, adapter.getItem(0).getClass().getSimpleName(), ScreenviewType.LOAD);
+//        Tealeaf.logScreenLayout(UICAndroidControlsAppActivity.this, "CA1", 2000);
+
+        Tealeaf.onResumeFragment(UICAndroidControlsAppActivity.this, null, adapter.getItem(0));
+
     }
 
     /* Add touch event to collect gestures for Tealeaf.
