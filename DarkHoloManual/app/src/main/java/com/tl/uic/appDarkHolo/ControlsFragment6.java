@@ -43,18 +43,6 @@ public class ControlsFragment6 extends Fragment {
 
         ListView lv = v.findViewById(R.id.listing1);
         lv.setAdapter(new MyCustomAdapter(this.getActivity()));
-        lv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                int j = 0;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
         return v;
     }
 
